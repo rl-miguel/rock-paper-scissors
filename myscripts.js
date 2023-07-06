@@ -25,14 +25,32 @@ play(a,b,c)
 
 
 function promptPlayer(question,a,b,c){
-playerChoice= prompt("Rock, Paper or Scissors?")
+playerChoice= prompt("Rock, Paper or Scissors?");
 console.log(playerChoice);
 }
 
 
 
+
+
 promptPlayer()
 
-
+/**
+ * pseudocode
+ * 
+ * add up values of what has been played
+ * rock, paper =3
+ * rock, scissors =4
+ * 
+ * paper, rock =3
+ * paper, scissors =5
+ * 
+ * scissors, rock =4
+ * scissors, paper =5
+ * 
+ * 
+ * if value== 4 && you played rock, then you win,
+ * otherwise you lose (because that means you played scissors instead)
+ */
 
 
