@@ -45,17 +45,47 @@ if(result=="Rock"){
     compScore += 3;
 }
 
-console.log(compScore, `Computer total is ${compScore} `) 
+console.log(compScore, `Computer total is ${result} `) 
 // console.log just to display that it is working
 console.log(playerScore);
-return playerScore;
+return;
 }
 
 
 promptPlayer()
 
+
 pointTotal = compScore + playerScore;
 console.log(pointTotal); // shows sum of compScore and playerScore
+
+function checkVictory(pointTotal, playerChoice){
+    if(pointTotal == 3 && playerChoice == "Paper"){ // (3)Paper versus Rock
+        alert("You win! Paper beats rock!");
+    } else if(pointTotal == 3 && playerChoice == "Rock"){
+        alert("Tie.");
+    } else if(pointTotal == 3 && playerChoice == "Scissors"){
+        alert("You lose! Rock beats scissors!");
+    }
+    if(pointTotal == 4 && playerChoice == "Rock"){ // (4)Rock versus Scissors
+        alert("You win! Rock beats scissors!");
+    } else if(pointTotal == 4 && playerChoice == "Scissors"){
+        alert("Tie.");
+    } else if(pointTotal == 4 && playerChoice == "Paper"){
+        alert("You lose! Scissors beats paper!");
+    }
+    if(pointTotal == 5 && playerChoice == "Scissors"){ //Scissors versus Paper
+        alert("You win! Scissors beats paper!");
+    } else if(pointTotal == 5 && playerChoice == "Paper"){
+        alert("Tie.");
+    } else if(pointTotal == 5 && playerChoice == "Rock"){
+        alert("You lose! Scissors beats Rock!");
+    }
+   
+}
+
+checkVictory(pointTotal, playerChoice)
+
+
 
 
 
