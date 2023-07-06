@@ -22,18 +22,28 @@ return result;
 
 play(a,b,c)
 
-
-
 function promptPlayer(question,a,b,c){
 playerChoice= prompt("Rock, Paper or Scissors?");
 console.log(playerChoice);
+
+pointTotal=0;
+
+if(playerChoice=="Rock"){
+    pointTotal += 1;
+} else if(playerChoice =="Paper"){
+    pointTotal += 2;
+} else if(playerChoice == "Scissors"){
+    pointTotal += 3;
+}
+
+console.log(pointTotal);
 }
 
 
 
 
-
 promptPlayer()
+
 
 /**
  * pseudocode
