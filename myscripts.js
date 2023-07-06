@@ -22,27 +22,43 @@ return result;
 
 play(a,b,c)
 
-function promptPlayer(question,a,b,c){
+function promptPlayer(question,a,b,c){ //prompts player for choice and adds to pointTotal
 playerChoice= prompt("Rock, Paper or Scissors?");
 console.log(playerChoice);
 
-pointTotal=0;
+playerScore=0;
 
 if(playerChoice=="Rock"){
-    pointTotal += 1;
+    playerScore += 1;
 } else if(playerChoice =="Paper"){
-    pointTotal += 2;
+    playerScore += 2;
 } else if(playerChoice == "Scissors"){
-    pointTotal += 3;
+    playerScore += 3;
 }
 
-console.log(pointTotal);
+compScore=0;
+if(result=="Rock"){
+    compScore += 1;
+} else if(result =="Paper"){
+    compScore += 2;
+} else if(result == "Scissors"){
+    compScore += 3;
 }
 
-
+console.log(compScore, `Computer total is ${compScore} `) 
+// console.log just to display that it is working
+console.log(playerScore);
+return playerScore;
+}
 
 
 promptPlayer()
+
+pointTotal = compScore + playerScore;
+console.log(pointTotal); // shows sum of compScore and playerScore
+
+
+
 
 
 /**
