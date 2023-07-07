@@ -21,9 +21,8 @@ return result;
 
 play(a,b,c)
 
-
 let playerChoice="";
-function promptPlayer(question,a,b,c){ //prompts player for choice
+function promptPlayer(question){ //prompts player for choice
 playerChoice= prompt("Rock, Paper or Scissors?");
 playerChoice= playerChoice.toLowerCase();
 console.log(playerChoice);
@@ -45,7 +44,7 @@ function checkVictory(playerChoice, result){
         alert("Tie!");
     } else if(playerChoice == "rock" && result == "Scissors"){
         alert("You win! Rock beats scissors!");
-        pointTotal += 1;
+        playerScore += 1;
     } else if(playerChoice == "rock" && result == "Paper"){
         alert("You lose! Paper beats rock!");
         compScore +=1;
@@ -69,51 +68,18 @@ function checkVictory(playerChoice, result){
     } else if(playerChoice == "scissors" && result == "Rock"){
         alert("You lose! Rock beats scissors!");
         compScore +=1;;
+    } else{
+        alert("Invalid selection. \nPlease enter 'rock', 'paper' or 'scissors'");
     }
-    
-    
-    
 
-   
-
-    //NOTE to self: may need to use a NOT ! operator on some instances, to resolve bug
-    // delete after fixed
-    // rock + rock =2 which isn't accounted for
-    //maybe I should scrap the whole thing and do an IF statement
-    // e.g. if playerChoice ="Rock" && result == "Rock", alert(Tie)
-
-    // switch statement, if(winCondition) += 1 to winTotal
-    //if Tie += 0
-    //if lose +=1 to compWinTotal
-   
+   console.log(`Your current score is ${playerScore}`);
+   console.log(`The computer's score is ${compScore}`);
 }
 
 
 
+
+
 checkVictory(playerChoice, result)
-
-
-
-
-
-
-
-/**
- * pseudocode
- * 
- * add up values of what has been played
- * rock, paper =3
- * rock, scissors =4
- * 
- * paper, rock =3
- * paper, scissors =5
- * 
- * scissors, rock =4
- * scissors, paper =5
- * 
- * 
- * if value== 4 && you played rock, then you win,
- * otherwise you lose (because that means you played scissors instead)
- */
 
 
