@@ -81,15 +81,22 @@ checkVictory(playerChoice, result);
 
 function game(a,b,c, question, playerChoice,result){
     play(a,b,c);
-    if(computerSelect <=0.3333333333333333333333333333333333333333333333333){
-        result= "rock";
-    } else if(computerSelect >=0.6666666666666666666666666666666666666666666666666){
-        result= "scissors";
-    } else{
-        result= "paper";
-    }
     promptPlayer(question);
     checkVictory(playerChoice, result);
+
+    play(a,b,c);
+    promptPlayer(question);
+    checkVictory(playerChoice, result);
+
+    play(a,b,c);
+    promptPlayer(question);
+    checkVictory(playerChoice, result);
+
+    play(a,b,c);
+    promptPlayer(question);
+    checkVictory(playerChoice, result);
+
+  
 }
 
 
