@@ -24,6 +24,7 @@ play(a,b,c)
 
 function promptPlayer(question,a,b,c){ //prompts player for choice and adds to pointTotal
 playerChoice= prompt("Rock, Paper or Scissors?");
+playerChoice= playerChoice.toLowerCase();
 console.log(playerChoice);
 
 console.log(`Computer chooses ${result}`);
@@ -38,27 +39,27 @@ promptPlayer()
 function checkVictory(playerChoice, result){
     alert(`Computer has chosen to play ${result}...`);
     
-    if(playerChoice == "Rock" && result == "Rock"){
+    if(playerChoice == "rock" && result == "Rock"){
         alert("Tie!");
-    } else if(playerChoice == "Rock" && result == "Scissors"){
+    } else if(playerChoice == "rock" && result == "Scissors"){
         alert("You win! Rock beats scissors!");
-    } else if(playerChoice == "Rock" && result == "Paper"){
+    } else if(playerChoice == "rock" && result == "Paper"){
         alert("You lose! Paper beats rock!");
     }
 
-    if(playerChoice == "Paper" && result == "Paper"){
+    if(playerChoice == "paper" && result == "Paper"){
         alert("Tie!");
-    } else if(playerChoice == "Paper" && result == "Rock"){
+    } else if(playerChoice == "paper" && result == "Rock"){
         alert("You win! Paper beats rock!");
-    } else if(playerChoice == "Paper" && result == "Scissors"){
+    } else if(playerChoice == "paper" && result == "Scissors"){
         alert("You lose! Scissors beats paper!");
     }
 
-    if(playerChoice == "Scissors" && result == "Scissors"){
+    if(playerChoice == "scissors" && result == "Scissors"){
         alert("Tie!");
-    } else if(playerChoice == "Scissors" && result == "Paper"){
+    } else if(playerChoice == "scissors" && result == "Paper"){
         alert("You win! Scissors beats paper!");
-    } else if(playerChoice == "Scissors" && result == "Rock"){
+    } else if(playerChoice == "scissors" && result == "Rock"){
         alert("You lose! Rock beats scissors!");
     }
    
