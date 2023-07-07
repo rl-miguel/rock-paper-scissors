@@ -1,35 +1,35 @@
 const a="rock";
 const b="paper";
 const c="scissors";
-let result="";
+let compChoice="";
 
-let computerSelect;
+let randomSelect;
 
 
-function play(a,b,c){
-    computerSelect = Math.random();
-    console.log(computerSelect); // this shows result of Math.random 
-if(computerSelect <=0.3333333333333333333333333333333333333333333333333){
-    result= a;
-} else if(computerSelect >=0.6666666666666666666666666666666666666666666666666){
-    result= c;
+function getComputerChoice(a,b,c){
+    randomSelect = Math.random();
+    console.log(randomSelect); // this shows result of Math.random 
+if(randomSelect <=0.3333333333333333333333333333333333333333333333333){
+    compChoice= a;
+} else if(randomSelect >=0.6666666666666666666666666666666666666666666666666){
+    compChoice= c;
 } else{
-    result= b;
+    compChoice= b;
 }
 
-console.log(result);
-return result;
+console.log(compChoice);
+return compChoice;
 }
 
-play(a,b,c)
+getComputerChoice(a,b,c)
 
 let playerChoice="";
-function promptPlayer(question){ //prompts player for choice
-playerChoice= prompt("Rock, Paper or Scissors?");
+function promptPlayer(){ //prompts player for choice
+playerChoice= prompt("Rock, paper or scissors?");
 playerChoice= playerChoice.toLowerCase();
 console.log(playerChoice);
 
-console.log(`Computer chooses ${result}`);
+console.log(`Computer chooses ${compChoice}`);
 // console.log just to display that it is working
 return playerChoice;
 }
@@ -39,35 +39,35 @@ promptPlayer()
 
 let playerScore=0;
 let compScore=0;
-function checkVictory(playerChoice, result){
-    alert(`Computer has chosen to play ${result}...`);
+function checkVictory(playerChoice, compChoice){
+    alert(`Computer has chosen to play ${compChoice}...`);
    
-    if(playerChoice == "rock" && result == "rock"){
+    if(playerChoice == "rock" && compChoice == "rock"){
         alert("Tie!");
-    } else if(playerChoice == "rock" && result == "scissors"){
+    } else if(playerChoice == "rock" && compChoice == "scissors"){
         alert("You win! Rock beats scissors!");
         playerScore++;
-    } else if(playerChoice == "rock" && result == "paper"){
+    } else if(playerChoice == "rock" && compChoice == "paper"){
         alert("You lose! Paper beats rock!");
         compScore++;
     }
 
-    if(playerChoice == "paper" && result == "paper"){
+    if(playerChoice == "paper" && compChoice == "paper"){
         alert("Tie!");
-    } else if(playerChoice == "paper" && result == "rock"){
+    } else if(playerChoice == "paper" && compChoice == "rock"){
         alert("You win! Paper beats rock!");
         playerScore++;
-    } else if(playerChoice == "paper" && result == "scissors"){
+    } else if(playerChoice == "paper" && compChoice == "scissors"){
         alert("You lose! Scissors beats paper!");
         compScore++;;
     }
 
-    if(playerChoice == "scissors" && result == "scissors"){
+    if(playerChoice == "scissors" && compChoice == "scissors"){
         alert("Tie!");
-    } else if(playerChoice == "scissors" && result == "paper"){
+    } else if(playerChoice == "scissors" && compChoice == "paper"){
         alert("You win! Scissors beats paper!");
         playerScore++;
-    } else if(playerChoice == "scissors" && result == "rock"){
+    } else if(playerChoice == "scissors" && compChoice == "rock"){
         alert("You lose! Rock beats scissors!");
         compScore++;;
     }
@@ -77,21 +77,21 @@ function checkVictory(playerChoice, result){
 }
 
 
-checkVictory(playerChoice, result);
+checkVictory(playerChoice, compChoice);
 
 function game(){
-    play(a,b,c);
-    promptPlayer("Rock, paper or scissors?");
-    checkVictory(playerChoice, result);
-    play(a,b,c);
-    promptPlayer("Rock, paper or scissors?");
-    checkVictory(playerChoice, result);
-    play(a,b,c);
-    promptPlayer("Rock, paper or scissors?");
-    checkVictory(playerChoice, result);
-    play(a,b,c);
-    promptPlayer("Rock, paper or scissors?");
-    checkVictory(playerChoice, result);
+    getComputerChoice(a,b,c);
+    promptPlayer();
+    checkVictory(playerChoice, compChoice);
+    getComputerChoice(a,b,c);
+    promptPlayer();
+    checkVictory(playerChoice, compChoice);
+    getComputerChoice(a,b,c);
+    promptPlayer();
+    checkVictory(playerChoice, compChoice);
+    getComputerChoice(a,b,c);
+    promptPlayer();
+    checkVictory(playerChoice, compChoice);
 }
 
 game()
