@@ -2,7 +2,6 @@ const a="Rock";
 const b="Paper";
 const c="Scissors";
 let result="";
-let playerChoice=""
 
 let computerSelect = Math.random();
 
@@ -22,20 +21,23 @@ return result;
 
 play(a,b,c)
 
-function promptPlayer(question,a,b,c){ //prompts player for choice and adds to pointTotal
+
+let playerChoice="";
+function promptPlayer(question,a,b,c){ //prompts player for choice
 playerChoice= prompt("Rock, Paper or Scissors?");
 playerChoice= playerChoice.toLowerCase();
 console.log(playerChoice);
 
 console.log(`Computer chooses ${result}`);
 // console.log just to display that it is working
-return;
+return playerChoice;
 }
 
 
 promptPlayer()
 
-
+let playerScore=0;
+let compScore=0;
 function checkVictory(playerChoice, result){
     alert(`Computer has chosen to play ${result}...`);
     
@@ -43,25 +45,35 @@ function checkVictory(playerChoice, result){
         alert("Tie!");
     } else if(playerChoice == "rock" && result == "Scissors"){
         alert("You win! Rock beats scissors!");
+        pointTotal += 1;
     } else if(playerChoice == "rock" && result == "Paper"){
         alert("You lose! Paper beats rock!");
+        compScore +=1;
     }
 
     if(playerChoice == "paper" && result == "Paper"){
         alert("Tie!");
     } else if(playerChoice == "paper" && result == "Rock"){
         alert("You win! Paper beats rock!");
+        playerScore += 1;
     } else if(playerChoice == "paper" && result == "Scissors"){
         alert("You lose! Scissors beats paper!");
+        compScore +=1;;
     }
 
     if(playerChoice == "scissors" && result == "Scissors"){
         alert("Tie!");
     } else if(playerChoice == "scissors" && result == "Paper"){
         alert("You win! Scissors beats paper!");
+        playerScore += 1;
     } else if(playerChoice == "scissors" && result == "Rock"){
         alert("You lose! Rock beats scissors!");
+        compScore +=1;;
     }
+    
+    
+    
+
    
 
     //NOTE to self: may need to use a NOT ! operator on some instances, to resolve bug
@@ -69,8 +81,14 @@ function checkVictory(playerChoice, result){
     // rock + rock =2 which isn't accounted for
     //maybe I should scrap the whole thing and do an IF statement
     // e.g. if playerChoice ="Rock" && result == "Rock", alert(Tie)
+
+    // switch statement, if(winCondition) += 1 to winTotal
+    //if Tie += 0
+    //if lose +=1 to compWinTotal
    
 }
+
+
 
 checkVictory(playerChoice, result)
 
