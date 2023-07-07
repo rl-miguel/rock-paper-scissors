@@ -2,7 +2,7 @@ const a="Rock";
 const b="Paper";
 const c="Scissors";
 let result="";
-let playerResult=""
+let playerChoice=""
 
 let computerSelect = Math.random();
 
@@ -26,28 +26,8 @@ function promptPlayer(question,a,b,c){ //prompts player for choice and adds to p
 playerChoice= prompt("Rock, Paper or Scissors?");
 console.log(playerChoice);
 
-playerScore=0;
-
-if(playerChoice=="Rock"){
-    playerScore += 1;
-} else if(playerChoice =="Paper"){
-    playerScore += 2;
-} else if(playerChoice == "Scissors"){
-    playerScore += 3;
-}
-
-compScore=0;
-if(result=="Rock"){
-    compScore += 1;
-} else if(result =="Paper"){
-    compScore += 2;
-} else if(result == "Scissors"){
-    compScore += 3;
-}
-
-console.log(compScore, `Computer total is ${result} `) 
+console.log(`Computer chooses ${result}`);
 // console.log just to display that it is working
-console.log(playerScore);
 return;
 }
 
@@ -55,35 +35,43 @@ return;
 promptPlayer()
 
 
-pointTotal = compScore + playerScore;
-console.log(pointTotal); // shows sum of compScore and playerScore
-
-function checkVictory(pointTotal, playerChoice){
-    if(pointTotal == 3 && playerChoice == "Paper"){ // (3)Paper versus Rock
-        alert("You win! Paper beats rock!");
-    } else if(pointTotal == 3 && playerChoice == "Rock"){
-        alert("Tie.");
-    } else if(pointTotal == 3 && playerChoice == "Scissors"){
-        alert("You lose! Rock beats scissors!");
-    }
-    if(pointTotal == 4 && playerChoice == "Rock"){ // (4)Rock versus Scissors
+function checkVictory(playerChoice, result){
+    alert(`Computer has chosen to play ${result}...`);
+    
+    if(playerChoice == "Rock" && result == "Rock"){
+        alert("Tie!");
+    } else if(playerChoice == "Rock" && result == "Scissors"){
         alert("You win! Rock beats scissors!");
-    } else if(pointTotal == 4 && playerChoice == "Scissors"){
-        alert("Tie.");
-    } else if(pointTotal == 4 && playerChoice == "Paper"){
+    } else if(playerChoice == "Rock" && result == "Paper"){
+        alert("You lose! Paper beats rock!");
+    }
+
+    if(playerChoice == "Paper" && result == "Paper"){
+        alert("Tie!");
+    } else if(playerChoice == "Paper" && result == "Rock"){
+        alert("You win! Paper beats rock!");
+    } else if(playerChoice == "Paper" && result == "Scissors"){
         alert("You lose! Scissors beats paper!");
     }
-    if(pointTotal == 5 && playerChoice == "Scissors"){ //Scissors versus Paper
+
+    if(playerChoice == "Scissors" && result == "Scissors"){
+        alert("Tie!");
+    } else if(playerChoice == "Scissors" && result == "Paper"){
         alert("You win! Scissors beats paper!");
-    } else if(pointTotal == 5 && playerChoice == "Paper"){
-        alert("Tie.");
-    } else if(pointTotal == 5 && playerChoice == "Rock"){
-        alert("You lose! Scissors beats Rock!");
+    } else if(playerChoice == "Scissors" && result == "Rock"){
+        alert("You lose! Rock beats scissors!");
     }
+   
+
+    //NOTE to self: may need to use a NOT ! operator on some instances, to resolve bug
+    // delete after fixed
+    // rock + rock =2 which isn't accounted for
+    //maybe I should scrap the whole thing and do an IF statement
+    // e.g. if playerChoice ="Rock" && result == "Rock", alert(Tie)
    
 }
 
-checkVictory(pointTotal, playerChoice)
+checkVictory(playerChoice, result)
 
 
 
