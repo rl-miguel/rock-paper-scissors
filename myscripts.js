@@ -42,46 +42,55 @@ let compScore=0;
 function checkVictory(playerChoice, result){
     alert(`Computer has chosen to play ${result}...`);
    
-        if(playerChoice == "rock" && result == "rock"){
+    if(playerChoice == "rock" && result == "rock"){
         alert("Tie!");
     } else if(playerChoice == "rock" && result == "scissors"){
         alert("You win! Rock beats scissors!");
-        playerScore += 1;
+        playerScore++;
     } else if(playerChoice == "rock" && result == "paper"){
         alert("You lose! Paper beats rock!");
-        compScore +=1;
+        compScore++;
     }
 
     if(playerChoice == "paper" && result == "paper"){
         alert("Tie!");
     } else if(playerChoice == "paper" && result == "rock"){
         alert("You win! Paper beats rock!");
-        playerScore += 1;
+        playerScore++;
     } else if(playerChoice == "paper" && result == "scissors"){
         alert("You lose! Scissors beats paper!");
-        compScore +=1;;
+        compScore++;;
     }
 
     if(playerChoice == "scissors" && result == "scissors"){
         alert("Tie!");
     } else if(playerChoice == "scissors" && result == "paper"){
         alert("You win! Scissors beats paper!");
-        playerScore += 1;
+        playerScore++;
     } else if(playerChoice == "scissors" && result == "rock"){
         alert("You lose! Rock beats scissors!");
-        compScore +=1;;
+        compScore++;;
     }
     
-    
-
    console.log(`Your current score is ${playerScore}`);
    console.log(`The computer's score is ${compScore}`);
 }
 
 
+checkVictory(playerChoice, result);
+
+function game(a,b,c, question, playerChoice,result){
+    play(a,b,c);
+    if(computerSelect <=0.3333333333333333333333333333333333333333333333333){
+        result= "rock";
+    } else if(computerSelect >=0.6666666666666666666666666666666666666666666666666){
+        result= "scissors";
+    } else{
+        result= "paper";
+    }
+    promptPlayer(question);
+    checkVictory(playerChoice, result);
+}
 
 
-
-checkVictory(playerChoice, result)
-
-
+game(a,b,c, "Rock, Paper or Scissors?", playerChoice,result)
