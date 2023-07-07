@@ -1,12 +1,14 @@
-const a="Rock";
-const b="Paper";
-const c="Scissors";
+const a="rock";
+const b="paper";
+const c="scissors";
 let result="";
 
-let computerSelect = Math.random();
+let computerSelect;
 
-console.log(computerSelect); // this shows result of Math.random 
+
 function play(a,b,c){
+    computerSelect = Math.random();
+    console.log(computerSelect); // this shows result of Math.random 
 if(computerSelect <=0.3333333333333333333333333333333333333333333333333){
     result= a;
 } else if(computerSelect >=0.6666666666666666666666666666666666666666666666666){
@@ -39,38 +41,38 @@ let playerScore=0;
 let compScore=0;
 function checkVictory(playerChoice, result){
     alert(`Computer has chosen to play ${result}...`);
-    
-    if(playerChoice == "rock" && result == "Rock"){
+   
+        if(playerChoice == "rock" && result == "rock"){
         alert("Tie!");
-    } else if(playerChoice == "rock" && result == "Scissors"){
+    } else if(playerChoice == "rock" && result == "scissors"){
         alert("You win! Rock beats scissors!");
         playerScore += 1;
-    } else if(playerChoice == "rock" && result == "Paper"){
+    } else if(playerChoice == "rock" && result == "paper"){
         alert("You lose! Paper beats rock!");
         compScore +=1;
     }
 
-    if(playerChoice == "paper" && result == "Paper"){
+    if(playerChoice == "paper" && result == "paper"){
         alert("Tie!");
-    } else if(playerChoice == "paper" && result == "Rock"){
+    } else if(playerChoice == "paper" && result == "rock"){
         alert("You win! Paper beats rock!");
         playerScore += 1;
-    } else if(playerChoice == "paper" && result == "Scissors"){
+    } else if(playerChoice == "paper" && result == "scissors"){
         alert("You lose! Scissors beats paper!");
         compScore +=1;;
     }
 
-    if(playerChoice == "scissors" && result == "Scissors"){
+    if(playerChoice == "scissors" && result == "scissors"){
         alert("Tie!");
-    } else if(playerChoice == "scissors" && result == "Paper"){
+    } else if(playerChoice == "scissors" && result == "paper"){
         alert("You win! Scissors beats paper!");
         playerScore += 1;
-    } else if(playerChoice == "scissors" && result == "Rock"){
+    } else if(playerChoice == "scissors" && result == "rock"){
         alert("You lose! Rock beats scissors!");
         compScore +=1;;
-    } else{
-        alert("Invalid selection. \nPlease enter 'rock', 'paper' or 'scissors'");
     }
+    
+    
 
    console.log(`Your current score is ${playerScore}`);
    console.log(`The computer's score is ${compScore}`);
