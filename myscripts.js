@@ -79,25 +79,19 @@ function checkVictory(playerChoice, result){
 
 checkVictory(playerChoice, result);
 
-function game(a,b,c, question, playerChoice,result){
+function game(){
     play(a,b,c);
-    promptPlayer(question);
+    promptPlayer("Rock, paper or scissors?");
     checkVictory(playerChoice, result);
-
     play(a,b,c);
-    promptPlayer(question);
+    promptPlayer("Rock, paper or scissors?");
     checkVictory(playerChoice, result);
-
     play(a,b,c);
-    promptPlayer(question);
+    promptPlayer("Rock, paper or scissors?");
     checkVictory(playerChoice, result);
-
     play(a,b,c);
-    promptPlayer(question);
+    promptPlayer("Rock, paper or scissors?");
     checkVictory(playerChoice, result);
-
-  
 }
 
-
-game(a,b,c, "Rock, Paper or Scissors?", playerChoice,result)
+game()
