@@ -21,7 +21,7 @@ console.log(compChoice);
 return compChoice;
 }
 
-getComputerChoice(a,b,c)
+
 
 let playerChoice="";
 function promptPlayer(){ //prompts player for choice
@@ -35,10 +35,11 @@ return playerChoice;
 }
 
 
-promptPlayer()
+
 
 let playerScore=0;
 let compScore=0;
+let firstTo5=0;
 function checkVictory(playerChoice, compChoice){
     alert(`Computer has chosen to play ${compChoice}...`);
    
@@ -74,24 +75,27 @@ function checkVictory(playerChoice, compChoice){
     
    console.log(`Your current score is ${playerScore}`);
    console.log(`The computer's score is ${compScore}`);
+
+   if(playerScore == 5){
+    firstTo5 = playerScore;
+    alert("You have won 5 rounds of Rock paper scissors.");
+   } else if(compScore == 5){
+    firstTo5 = compScore;
+    alert("The computer has won 5 rounds of Rock paper scissors.");
+   }
+  
 }
 
 
-checkVictory(playerChoice, compChoice);
 
+let gamesPlayed=0;
 function game(){
+    for (gamesPlayed=0; firstTo5 != 5; gamesPlayed++){
     getComputerChoice(a,b,c);
     promptPlayer();
     checkVictory(playerChoice, compChoice);
-    getComputerChoice(a,b,c);
-    promptPlayer();
-    checkVictory(playerChoice, compChoice);
-    getComputerChoice(a,b,c);
-    promptPlayer();
-    checkVictory(playerChoice, compChoice);
-    getComputerChoice(a,b,c);
-    promptPlayer();
-    checkVictory(playerChoice, compChoice);
+    }
+    return gamesPlayed;
 }
 
 game()
