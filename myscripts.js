@@ -42,7 +42,6 @@ function checkVictory(playerChoice, compChoice){
     }
 
     if(playerChoice == "scissors" && compChoice == "scissors"){
-        alert("Tie!");
     } else if(playerChoice == "scissors" && compChoice == "paper"){
         playerScore++;
     } else if(playerChoice == "scissors" && compChoice == "rock"){
