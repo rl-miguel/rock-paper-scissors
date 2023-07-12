@@ -26,35 +26,26 @@ let playerScore=0;
 let compScore=0;
 let firstTo5=0;
 function checkVictory(playerChoice, compChoice){
-    alert(`Computer has chosen to play ${compChoice}...`);
 
     if(playerChoice == "rock" && compChoice == "rock"){
-        alert("Tie!");
     } else if(playerChoice == "rock" && compChoice == "scissors"){
-        alert("You win! Rock beats scissors!");
         playerScore++;
     } else if(playerChoice == "rock" && compChoice == "paper"){
-        alert("You lose! Paper beats rock!");
         compScore++;
     }
 
     if(playerChoice == "paper" && compChoice == "paper"){
-        alert("Tie!");
     } else if(playerChoice == "paper" && compChoice == "rock"){
-        alert("You win! Paper beats rock!");
         playerScore++;
     } else if(playerChoice == "paper" && compChoice == "scissors"){
-        alert("You lose! Scissors beats paper!");
         compScore++;;
     }
 
     if(playerChoice == "scissors" && compChoice == "scissors"){
         alert("Tie!");
     } else if(playerChoice == "scissors" && compChoice == "paper"){
-        alert("You win! Scissors beats paper!");
         playerScore++;
     } else if(playerChoice == "scissors" && compChoice == "rock"){
-        alert("You lose! Rock beats scissors!");
         compScore++;;
     }
     
@@ -72,41 +63,50 @@ function checkVictory(playerChoice, compChoice){
 }
 
 const buttons= document.getElementsByTagName('button')
+
 buttons[0].addEventListener('click', ()=>{
     playerChoice="rock";
     game()
 });
-
-
-
 buttons[1].addEventListener('click',()=>{
     playerChoice="paper";
     game()
 });
-
 buttons[2].addEventListener('click',()=>{
     playerChoice="scissors";
     game()
 });
 
 
-let gamesPlayed=0;
 function game(){
     getComputerChoice(a,b,c);
-    
     checkVictory(playerChoice, compChoice);
-    return gamesPlayed;
-}
 
-/**
+    const body = document.querySelector('body');
 
- * let playerChoice="";
-function promptPlayer(){ //prompts player for choice
-playerChoice= prompt("Rock, paper or scissors?");
-playerChoice= playerChoice.toLowerCase();
-console.log(playerChoice);
+let choiceString = document.createElement('div');
+choiceString.style.marginTop='8px';
+choiceString.style.marginBottom='30px';
+choiceString.style.padding='10px';
+choiceString.style.marginLeft='600px';
+choiceString.style.marginRight='600px';
+choiceString.style.backgroundColor='#ebe1e1';
+choiceString.textContent=`You choose ${playerChoice} and the computer has chosen
+                         to play ${compChoice}. Your current score is ${playerScore}
+                         and the computer's current score is ${compScore}`;
 
-console.log(`Computer chooses ${compChoice}`);
-// console.log just to display that it is working
-return playerChoice;
-} */
+
+body.appendChild(choiceString);
+
+    if(playerScore == 5) {
+        buttons[0].removeEventListener('click', onClick);
+        buttons[1].removeEventListener('click', onClick);
+        buttons[2].removeEventListener('click', onClick);
+    } else if(compScore==5){
+        buttons[0].removeEventListener('click', onClick);
+        buttons[1].removeEventListener('click', onClick);
+        buttons[2].removeEventListener('click', onClick);
+    }
+};
+
+
