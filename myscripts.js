@@ -2,7 +2,7 @@ const a="rock";
 const b="paper";
 const c="scissors";
 let compChoice="";
-
+let playerChoice="";
 let randomSelect;
 
 
@@ -20,21 +20,6 @@ if(randomSelect <=0.3333333333333333333333333333333333333333333333333){
 console.log(compChoice);
 return compChoice;
 }
-
-
-
-let playerChoice="";
-function promptPlayer(){ //prompts player for choice
-playerChoice= prompt("Rock, paper or scissors?");
-playerChoice= playerChoice.toLowerCase();
-console.log(playerChoice);
-
-console.log(`Computer chooses ${compChoice}`);
-// console.log just to display that it is working
-return playerChoice;
-}
-
-
 
 
 let playerScore=0;
@@ -86,16 +71,42 @@ function checkVictory(playerChoice, compChoice){
   
 }
 
+const buttons= document.getElementsByTagName('button')
+buttons[0].addEventListener('click', ()=>{
+    playerChoice="rock";
+    game()
+});
 
 
-/** let gamesPlayed=0;
+
+buttons[1].addEventListener('click',()=>{
+    playerChoice="paper";
+    game()
+});
+
+buttons[2].addEventListener('click',()=>{
+    playerChoice="scissors";
+    game()
+});
+
+
+let gamesPlayed=0;
 function game(){
-    for (gamesPlayed=0; firstTo5 != 5; gamesPlayed++){
     getComputerChoice(a,b,c);
-    promptPlayer();
+    
     checkVictory(playerChoice, compChoice);
-    }
     return gamesPlayed;
 }
 
-game() **/
+/**
+
+ * let playerChoice="";
+function promptPlayer(){ //prompts player for choice
+playerChoice= prompt("Rock, paper or scissors?");
+playerChoice= playerChoice.toLowerCase();
+console.log(playerChoice);
+
+console.log(`Computer chooses ${compChoice}`);
+// console.log just to display that it is working
+return playerChoice;
+} */
