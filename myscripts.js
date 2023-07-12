@@ -42,7 +42,7 @@ let compScore=0;
 let firstTo5=0;
 function checkVictory(playerChoice, compChoice){
     alert(`Computer has chosen to play ${compChoice}...`);
-   
+
     if(playerChoice == "rock" && compChoice == "rock"){
         alert("Tie!");
     } else if(playerChoice == "rock" && compChoice == "scissors"){
@@ -88,7 +88,7 @@ function checkVictory(playerChoice, compChoice){
 
 
 
-let gamesPlayed=0;
+/** let gamesPlayed=0;
 function game(){
     for (gamesPlayed=0; firstTo5 != 5; gamesPlayed++){
     getComputerChoice(a,b,c);
@@ -98,4 +98,4 @@ function game(){
     return gamesPlayed;
 }
 
-game()
+game() **/
