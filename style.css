@@ -3,7 +3,7 @@ body{
     background-color:#f5edf0;
 }
 .btn-container{
-    height:100vh;
+    height:20vh;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -16,12 +16,12 @@ button{
     box-shadow:5px 10px #968989;
 }
 
-button.btn-rock{
+button.rock{
     background-color:#F5A7A7;
 }
-button.btn-paper{
+button.paper{
     background-color:#F9D89C;
 }
-button.btn-scissors{
+button.scissors{
     background-color:#82C4C3;
 }
