@@ -1,0 +1,27 @@
+/* https://colorhunt.co/palette/bc658d82c4c3f9d89cf5a7a7 */
+body{
+    background-color:#f5edf0;
+}
+.btn-container{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:400px;
+}
+
+button{
+    border-radius:30px;
+    padding:35px;
+    box-shadow:5px 10px #968989;
+}
+
+button.btn-rock{
+    background-color:#F5A7A7;
+}
+button.btn-paper{
+    background-color:#F9D89C;
+}
+button.btn-scissors{
+    background-color:#82C4C3;
+}
