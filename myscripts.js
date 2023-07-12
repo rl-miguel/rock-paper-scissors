@@ -76,8 +76,14 @@ buttons[2].addEventListener('click',()=>{
     game()
 });
 
-
+function removeEvent(){
+    playerChoice="";
+    compChoice="";
+}
 function game(){
+    if(playerScore==5 || compScore==5){
+        return;
+    }
     getComputerChoice(a,b,c);
     checkVictory(playerChoice, compChoice);
 
@@ -95,17 +101,8 @@ choiceString.textContent=`You choose ${playerChoice} and the computer has chosen
                          and the computer's current score is ${compScore}`;
 
 
-body.appendChild(choiceString);
 
-    if(playerScore == 5) {
-        buttons[0].removeEventListener('click', onClick);
-        buttons[1].removeEventListener('click', onClick);
-        buttons[2].removeEventListener('click', onClick);
-    } else if(compScore==5){
-        buttons[0].removeEventListener('click', onClick);
-        buttons[1].removeEventListener('click', onClick);
-        buttons[2].removeEventListener('click', onClick);
-    }
-};
+body.appendChild(choiceString);
+}
 
 
